@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Kristiasara Natamora</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">Kristiasara Natamora</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Portfolio</a></li>
+          <li><a href="#certificates">Certificate</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="menu-toggle" class="menu-toggle" aria-label="menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+<!-- ===== HOME ===== -->
+<section id="home" class="section home-section">
+  <div class="home-wrap">
+    <div class="home-photo">
+      <img src="images/profile.png" alt="Profile Photo">
+    </div>
+
+    <div class="home-text">
+      <div class="text-adjust">
+      <h1>Hello, I'm <span>Kristiasara Natamora</span></h1>
+      <p>
+       I am a fifth-semester <strong>Computer Engineering</strong> student at Multimedia Nusantara University with academic interests in web development, embedded systems, networking, image processing, and Python programming. 
+       These areas have helped me build a strong technical foundation and deepen my understanding of how software and hardware integrate to create effective computing solutions.
+      </p>
+      <p>
+        Alongside my studies, I have been actively involved in various organizational activities that have strengthened my skills in MS Excel, data management, teamwork, coordination, communication, and content writing. 
+        These experiences have also enhanced my abilities in leadership, public speaking, event coordination, and time management.
+      </p>
+      <p>
+        Driven by digital innovation and continuous learning, I enjoy working in collaborative environments and contributing to user-oriented solutions. 
+        I aim to expand my technical expertise while utilizing my organizational skills to support impactful and efficient technology development.
+      </p>
+      <a href="#cv" class="btn">View My CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section project-section">
+    <h2>Portfolio</h2>
+
+    <h3 class="category-title">Completed Projects</h3>
+    <div class="project-grid">
+      <div class="project-card">
+        <h4>GDC UMN</h4>
+        <p class="project-date">October – December 2024</p>
+        <p>
+          Developed a responsive web interface using HTML, CSS, and JavaScript for a student organization (UKM/LSO) at Multimedia Nusantara University.
+        </p>
+        <a href="https://uas-pti-lec-lab-final-responsive-version.vercel.app/" target="_blank" class="project-link">Visit Project ↗</a>
+      </div>
+
+      <div class="project-card">
+        <h4>Every Nation Gading Serpong</h4>
+        <p class="project-date">April – June 2025</p>
+        <p>
+          Built a full-stack website using HTML, PHP, Laravel, CSS, API, and MySQL for a client-based project focusing on user functionality and design.
+        </p>
+        <a href="https://everynationserpong.com/" target="_blank" class="project-link">Visit Project ↗</a>
+      </div>
+    </div>
+
+    <h3 class="category-title">On-Going Projects</h3>
+    <div class="project-grid">
+      <div class="project-card">
+        <h4>SMART_HELMET</h4>
+        <p class="project-date">Pervasive & Embedded — August – Present</p>
+        <p>
+          Developing an IoT-based helmet system with a simulated sensor interface.
+          Frontend: React.js, HTML, css | Backend: PHP, JavaScript, MySQL.
+        </p>
+        <p>
+          <a href="https://github.com/Kristiasara18/SMART_HELMET" target="_blank" class="project-link">Pervasive Repo ↗</a><br>
+          <a href="https://github.com/Laplace-F/Embedeed" target="_blank" class="project-link">Embedded Repo ↗</a><br>
+          <a href="https://youtu.be/GipwQ_WLt2E" target="_blank" class="project-link">Demo Video ↗</a>
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h4>AI Audio Research</h4>
+        <p class="project-date">August 2025 – Present</p>
+        <p>
+          Conducting research on depression detection through audio using prosodic features in bilingual data with segmentation and augmentation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== CERTIFICATES ===== -->
+<section id="certificates" class="section certificate-section">
+  <h2>Certificate</h2>
+
+  <div class="cert-gallery">
+
+    <!-- CERTIFICATE 1 -->
+    <div class="cert-card">
+      <img src="images/Certivicate1.png" alt="Certificate 1">
+
+      <div class="cert-info">
+  <h3>HCIA-openGauss V1.0 Course — Huawei Technologies</h3>
+  <p>Huawei ICT Academy | Issued: July 2025</p>
+  <p>Completed foundational training...</p>
+
+  <button class="cert-open-btn">
+    <img src="images/open_icon.png" alt="open">
+  </button>
+</div>
+    </div>
+
+    <!-- CERTIFICATE 2 -->
+    <div class="cert-card">
+      <img src="images/Certivicate2.png" alt="Certificate 2">
+
+      <div class="cert-info">
+        <h3>Certificate Information</h3>
+        <p>(No description available yet)</p>
+        <button class="cert-open-btn">
+    <img src="images/open_icon.png" alt="open">
+  </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="cert-popup" id="certPopup">
+  <span class="close-popup" id="closePopup">&times;</span>
+  <img id="popupImg" src="">
+</div>
+
+
+  <!-- ===== CONTACT ===== -->
+<section id="contact" class="section contact-section">
+
+  <div class="contact-container">
+
+    <!-- LEFT SIDE: EMAIL FORM -->
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- RIGHT SIDE: TITLE + TEXT + SOCIAL -->
+    <div class="contact-right">
+
+      <h2 class="contact-title">
+        <span class="black">Contact</span> <span class="pink">Me</span>
+      </h2>
+
+      <p class="contact-desc">
+        If you need support in software development, IT networking, or embedded development, feel free to reach out.
+      </p>
+
+      <div class="contact-row">
+        <a href="https://linkedin.com/in/kristiasara-natamora-03120828a" target="_blank" class="contact-shape linkedin">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://www.instagram.com/moraggu?igsh=eXRmNnB2MnlnaXNj" target="_blank" class="contact-shape instagram">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://wa.me/6282287976337" target="_blank" class="contact-shape whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  <footer>© 2025 Kristiasara Natamora — All Rights Reserved.</footer>
+
+  <script src="script.js"></script>
+  <script>
+  const popup = document.getElementById("certPopup");
+  const popupImg = document.getElementById("popupImg");
+  const closePopup = document.getElementById("closePopup");
+
+  document.querySelectorAll(".cert-card").forEach((card) => {
+    const img = card.querySelector("img");
+    const btn = card.querySelector(".cert-open-btn");
+
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      popup.style.display = "flex";
+      popupImg.src = img.src;
+    });
+  });
+
+  closePopup.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  // klik area luar gambar → tutup
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) popup.style.display = "none";
+  });
+</script>
+
+</body>
+
+<script>
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  sectionObserver.observe(document.querySelector('.project-section'));
+</script>
+
+</html>

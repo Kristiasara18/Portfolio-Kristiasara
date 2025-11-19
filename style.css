@@ -1,0 +1,628 @@
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ---------- THEME GREEN ---------- */
+:root {
+  --green: #B7C8A6;          /* balanced pastel */
+  --green-opaque: #C3D2B8;   /* creamy green */
+  --green-strong-80: #A8BFA0; /* sedikit lebih kuat */
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--green-strong-80);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 6%;
+}
+
+.logo {
+  font-size: 24px;   /* ukuran diperbesar */
+  font-weight: 700;
+  color: #111;
+  margin-left: -20px; /* geser lebih ke kiri */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background: var(--green-opaque);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #111;
+}
+
+/* ===== HOME ===== */
+.home-section {
+  padding-top: 70px; /* lebih rapat ke header */
+  background: #fff;
+  min-height: 0vh; /* sedikit lebih tinggi agar tampilan seimbang */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.home-wrap {
+  --text-offset: -500px;       /* ubah angka ini untuk naik/turun */
+  
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;  
+  gap: 60px;
+  padding: 0 5%;
+}
+
+/* Gambar di kiri */
+.home-photo {
+  flex: 0 0 400px; /* beri ruang sedikit lebih besar */
+  display: flex;
+  justify-content: flex-start; /* dorong ke kiri */
+  align-items: center;
+}
+
+.home-photo img {
+  width: 550px; /* sedikit diperbesar */
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+  box-shadow: none;
+  background: transparent;
+  margin-left: -40px; /* geser sedikit ke kiri */
+}
+
+/* Teks di kanan gambar */
+.home-text {
+  flex: 1 1 auto;
+  transform: translateY(0px);
+}
+
+/* Wrapper baru untuk mengatur naik/turun teks */
+.text-adjust {
+  transform: translateY(var(--text-shift, 50px));
+}
+
+.home-text h1 {
+  font-size: 2.6rem; /* lebih besar */
+  color: #111;
+  font-weight: 700;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.home-text h1 span {
+  color: #FF789B;
+}
+
+.home-text p {
+  color: #2b2b2b;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  max-width: 620px;
+  font-size: 1.05rem; /* sedikit lebih besar */
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: var(--green);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background: #7c8c66;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .home-wrap {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .home-photo {
+    justify-content: center;
+  }
+
+  .home-photo img {
+    width: 280px;
+    margin-left: 0;
+  }
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
+
+  .home-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== PROJECTS ===== */
+.project-section {
+  padding: 80px 6%;
+  background: var(--green-opaque);
+   opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.project-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-section h2 {
+  text-align: center;
+  font-size: 5rem;
+  color: #FF789B;
+  font-weight: 1000;
+  margin-bottom: 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.category-title {
+  text-align: center;
+  color: #FFF2DE;
+  margin: 30px 0 20px;
+  font-size: 1.4rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.project-card h4 {
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.project-date {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.project-link {
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project-link:hover {
+  color: #6d795b;
+  text-decoration: underline;
+}
+
+/* ===== CERTIFICATES ===== */
+.certificate-section {
+  padding: 80px 6%;
+  background: #fff;
+}
+
+.certificate-section h2 {
+  text-align: center;
+  color: var(--green);
+  font-size: 2rem;
+  font-weight: 1000;
+  margin-bottom: 40px;
+}
+
+/* Gallery Layout */
+.cert-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Card */
+.cert-card {
+  position: relative;
+  width: 320px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+/* Image */
+.cert-card img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+  transition: 0.35s ease;
+}
+
+/* Hover: naik + zoom */
+.cert-card:hover img {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* INFO POP-UP (sedikit terlihat) */
+.cert-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  /* 👇 TERLIHAT SEDIKIT sebelum hover (sekitar 20% keluar) */
+  bottom: -70%;  
+  height: 100%;
+  padding: 25px;
+
+  /* GRADIENT: atas transparan → bawah pink tebal */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 150, 170, 0.0),   /* transparan */
+    rgba(255, 140, 170, 0.45),  /* lebih terlihat */
+    rgba(255, 120, 155, 0.85)   /* bagian bawah tebal */
+  );
+
+  backdrop-filter: blur(5px);
+  color: black;                /* 👈 TEKS HITAM */
+  border-radius: 12px;
+  opacity: 1;                  /* tetap terlihat */
+  transition: all 0.45s ease;
+
+  display: flex;               /* TEKS TENGAH */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Hover → naik full */
+.cert-card:hover .cert-info {
+  bottom: 0;
+}
+
+/* Text style */
+.cert-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: black;  /* pastikan hitam */
+}
+
+.cert-info p {
+  font-size: 0.9rem;
+  margin: 4px 0;
+  color: black;  /* tetap hitam */
+}
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+.contact-section {
+  padding: 80px 6% 100px;
+  background: var(--green-opaque);
+}
+
+.contact-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--pink);
+  font-weight: 1000;
+  margin-bottom: 40px;
+}
+
+/* Layout */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CONTACT FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 450px;
+  background: #fff;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 4px rgba(142,156,120,0.3);
+}
+
+.contact-form textarea {
+  height: 130px;
+  resize: none;
+}
+
+.contact-form button {
+  background: var(--green);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #7c8c66;
+}
+
+/* SOCIAL SHAPES */
+.contact-shapes {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 75px;
+}
+
+.contact-shape {
+  padding: 15px 35px;
+  border-radius: 50px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.contact-shape.linkedin  { background: #0077b5; }
+.contact-shape.instagram { background: #d6249f; }
+.contact-shape.whatsapp  { background: #25d366; }
+
+/* =========================================
+   CERTIFICATE POPUP
+========================================= */
+/* Button */
+.cert-open-btn {
+  margin-top: 20px;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.cert-open-btn:hover {
+  transform: scale(1.1);
+}
+
+.cert-open-btn img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Popup */
+.cert-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+}
+
+.cert-popup img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.45);
+}
+
+/* Close Button */
+.close-popup {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.close-popup:hover {
+  transform: scale(1.2);
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 50px;
+  max-width: 420px;
+}
+
+/* TITLE: Contact Me */
+.contact-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 3.4rem;
+  font-style: italic;
+  margin: 0;              /* hilangkan semua margin bawaan */
+  padding: 0;
+  text-align: left;
+  line-height: 1.02;       /* lebih rapat, tidak terlalu menumpuk */
+}
+
+.contact-title .black {
+  color: #000;
+}
+
+.contact-title .pink {
+  color: #FF789B;
+}
+
+/* DESCRIPTION BELOW TITLE */
+.contact-desc {
+  font-size: 1.25rem;
+  color: #444;
+  margin-top: 0px;             /* jarak kecil untuk rapat tapi tetap nyaman */
+  margin-bottom: 8px;         /* JARAK PENTING supaya JAUH dari social icons */
+  line-height: 1.5;
+  max-width: 420px;
+  text-align: left;
+}
+
+/* SOCIAL ICONS HORIZONTAL */
+.contact-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;            /* tambahan kecil agar lebih lega */
+}
+
+.contact-row .contact-shape {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   FOOTER (PERBAIKAN)
+========================================= */
+footer {
+  background: #ffffff;      /* tetap putih */
+  color: #333;
+  padding: 25px 0;
+  text-align: center;       /* teks di tengah */
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+footer .footer-content {
+  max-width: 500px;         /* supaya tidak selebar layar */
+  width: 50%;                /* responsif */
+}
+
+/* =========================================
+   RESPONSIVE (MOBILE)
+========================================= */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 620px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    right: 6%;
+    top: 56px;
+    flex-direction: column;
+    background: var(--green-strong-80);
+    padding: 12px;
+    border-radius: 8px;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
