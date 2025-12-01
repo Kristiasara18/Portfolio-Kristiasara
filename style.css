@@ -108,20 +108,22 @@ header {
 
 /* Gambar di kiri */
 .home-photo {
-  flex: 0 0 400px;
+  flex: 0 0 0;
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
 .home-photo img {
-  width: 550px;
+  width: 600px;
   height: auto;
   border-radius: 0;
   object-fit: contain;
   box-shadow: none;
   background: transparent;
-  margin-left: -40px;
+  margin-left: -60px;
+  margin-top: -80px;
 }
 
 /* Teks di kanan gambar */
