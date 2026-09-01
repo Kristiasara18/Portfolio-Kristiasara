@@ -274,7 +274,6 @@ header.scrolled {
 }
 .hero-socials a:hover { background: var(--gold); color: var(--maroon-ink); transform: translateY(-4px); }
 
-/* Hero photo — perfectly aligned circle */
 .hero-photo {
   position: relative;
   justify-self: center;
@@ -309,10 +308,9 @@ header.scrolled {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  /* enlarge the subject and raise it so it isn't sitting too low */
-  transform: scale(1.16) translateY(-4%);
-  transform-origin: center top;
+  object-position: center center;
+  transform: scale(1.1);
+  transform-origin: center center;
   display: block;
 }
 
