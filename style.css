@@ -297,7 +297,7 @@ header.scrolled {
 
 .photo-frame {
   position: relative;
-  width: 84%;
+  width: 90%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
@@ -309,7 +309,10 @@ header.scrolled {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 22%;
+  object-position: center top;
+  /* enlarge the subject and raise it so it isn't sitting too low */
+  transform: scale(1.16) translateY(-4%);
+  transform-origin: center top;
   display: block;
 }
 
@@ -757,6 +760,72 @@ footer {
 }
 .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { background: var(--maroon-deep); transform: translateY(-4px); }
+
+/* ===================== FORM SUCCESS POPUP ===================== */
+.form-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 6, 10, 0.72);
+  backdrop-filter: blur(6px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  padding: 24px;
+}
+.form-popup.show { display: flex; }
+.form-popup-box {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 42px 36px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--line);
+  transform: translateY(16px) scale(0.96);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.form-popup.show .form-popup-box { transform: translateY(0) scale(1); opacity: 1; }
+.fp-icon {
+  width: 74px; height: 74px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  color: #fff;
+  background: linear-gradient(140deg, #2e9e63, #1f8a5a);
+  box-shadow: 0 10px 24px rgba(31, 138, 90, 0.35);
+}
+.fp-icon.error {
+  background: linear-gradient(140deg, var(--maroon-light), var(--maroon-deep));
+  box-shadow: 0 10px 24px rgba(123, 30, 43, 0.35);
+}
+.form-popup-box h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  color: var(--maroon-deep);
+  margin-bottom: 10px;
+}
+.form-popup-box p { color: var(--muted); font-size: 0.98rem; margin-bottom: 24px; }
+#formPopupClose {
+  background: var(--maroon);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#formPopupClose:hover { background: var(--maroon-deep); transform: translateY(-2px); }
+
+/* Button loading state */
+.contact-form button.sending { opacity: 0.7; cursor: wait; }
 
 /* ===================== REVEAL ANIMATION ===================== */
 .reveal {
