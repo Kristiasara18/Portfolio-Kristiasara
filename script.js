@@ -16,6 +16,45 @@ menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
+// ===== HEADER SOLIDIFY ON SCROLL =====
+const siteHeader = document.getElementById("site-header");
+const heroSection = document.getElementById("home");
+
+function updateHeaderState() {
+  const threshold = heroSection.offsetHeight - 90;
+  if (window.scrollY > threshold) {
+    siteHeader.classList.add("scrolled");
+  } else {
+    siteHeader.classList.remove("scrolled");
+  }
+}
+window.addEventListener("scroll", updateHeaderState);
+updateHeaderState();
+
+// ===== CERTIFICATE POPUP =====
+const popup = document.getElementById("certPopup");
+const popupImg = document.getElementById("popupImg");
+const closePopup = document.getElementById("closePopup");
+
+document.querySelectorAll(".cert-card").forEach((card) => {
+  const img = card.querySelector("img");
+  const btn = card.querySelector(".cert-open-btn");
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    popup.style.display = "flex";
+    popupImg.src = img.src;
+  });
+});
+
+closePopup.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) popup.style.display = "none";
+});
+
 // ===== LANGUAGE (EN / ID) TOGGLE =====
 const translations = {
   en: {
@@ -25,9 +64,11 @@ const translations = {
     "nav.certificates": "Certificate",
     "nav.contact": "Contact",
 
-    "home.greeting": "Hello, I'm <span>Kristiasara Natamora</span>",
+    "home.role": "Computer Engineering Student · UI/UX Frontend Developer Intern",
     "home.p1": "I am a seventh-semester <strong>Computer Engineering</strong> student at Multimedia Nusantara University, currently interning as a UI/UX Frontend Developer at PT Indocyber Global Teknologi. My academic interests include web development, embedded systems, networking, image processing, and Python programming, which have helped me build a strong technical foundation in how software and hardware integrate to create effective computing solutions.",
     "home.p2": "Alongside my studies, I have actively participated in organizational activities that strengthened my skills in MS Excel, data management, teamwork, coordination, communication, and content writing. These experiences also enhanced my leadership, public speaking, event coordination, and time-management abilities. Driven by digital innovation and continuous learning, I enjoy collaborating in team environments, contributing to user-oriented solutions, and expanding my technical expertise while applying my organizational skills to support impactful and efficient technology development.",
+    "home.cta.work": "See my work",
+    "home.cta.contact": "Get in touch",
 
     "experience.title": "Work Experience",
     "experience.date": "2025 – Present",
@@ -48,6 +89,7 @@ const translations = {
     "certificates.issuer": "Huawei ICT Academy",
     "certificates.issued": "Issued: July 2025",
     "certificates.desc": "Completed foundational training in database systems with openGauss, focusing on database architecture, data management, and system fundamentals.",
+    "certificates.view": "View Certificate ↗",
 
     "contact.title1": "Contact",
     "contact.title2": "Me.",
@@ -67,9 +109,11 @@ const translations = {
     "nav.certificates": "Sertifikat",
     "nav.contact": "Kontak",
 
-    "home.greeting": "Halo, saya <span>Kristiasara Natamora</span>",
+    "home.role": "Mahasiswa Teknik Komputer · UI/UX Frontend Developer Intern",
     "home.p1": "Saya adalah mahasiswa <strong>Teknik Komputer</strong> semester 7 di Universitas Multimedia Nusantara, saat ini menjalani magang sebagai UI/UX Frontend Developer di PT Indocyber Global Teknologi. Minat akademis saya meliputi pengembangan web, sistem tertanam (embedded system), jaringan, pengolahan citra, dan pemrograman Python, yang membangun fondasi teknis kuat dalam memahami integrasi perangkat lunak dan perangkat keras untuk menciptakan solusi komputasi yang efektif.",
     "home.p2": "Selain studi, saya aktif dalam berbagai kegiatan organisasi yang memperkuat kemampuan saya dalam MS Excel, manajemen data, kerja sama tim, koordinasi, komunikasi, dan penulisan konten. Pengalaman ini juga meningkatkan kemampuan kepemimpinan, public speaking, koordinasi acara, dan manajemen waktu saya. Didorong oleh inovasi digital dan pembelajaran berkelanjutan, saya senang berkolaborasi dalam tim, berkontribusi pada solusi yang berorientasi pengguna, serta terus mengembangkan keahlian teknis sambil menerapkan kemampuan organisasi untuk mendukung pengembangan teknologi yang berdampak dan efisien.",
+    "home.cta.work": "Lihat karya saya",
+    "home.cta.contact": "Hubungi saya",
 
     "experience.title": "Pengalaman Kerja",
     "experience.date": "2025 – Sekarang",
@@ -90,6 +134,7 @@ const translations = {
     "certificates.issuer": "Huawei ICT Academy",
     "certificates.issued": "Diterbitkan: Juli 2025",
     "certificates.desc": "Menyelesaikan pelatihan dasar sistem basis data dengan openGauss, dengan fokus pada arsitektur basis data, manajemen data, dan dasar-dasar sistem.",
+    "certificates.view": "Lihat Sertifikat ↗",
 
     "contact.title1": "Hubungi",
     "contact.title2": "Saya.",
@@ -130,7 +175,6 @@ function applyLanguage(lang) {
     }
   });
 
-  // Button shows the language you'd switch TO
   langToggleBtn.textContent = lang === "en" ? "ID" : "EN";
   localStorage.setItem("portfolio-lang", lang);
 }
