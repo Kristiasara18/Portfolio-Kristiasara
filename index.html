@@ -4,212 +4,216 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Kristiasara Natamora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header>
+  <header id="site-header">
     <div class="header-inner">
-      <div class="logo">Kristiasara Natamora</div>
+      <a href="#home" class="brand">Kristiasara<span>.</span></a>
       <nav>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#projects">Portfolio</a></li>
-          <li><a href="#certificates">Certificate</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" data-i18n="nav.home">Home</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="#projects" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="#certificates" data-i18n="nav.certificates">Certificate</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
-        <button id="menu-toggle" class="menu-toggle" aria-label="menu">☰</button>
+        <button id="lang-toggle" class="lang-toggle" aria-label="switch language" type="button">ID</button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="menu">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </div>
   </header>
 
-<!-- ===== HOME ===== -->
-<section id="home" class="section home-section">
-  <div class="home-wrap">
-    <div class="home-photo">
-      <img src="images/profile.png" alt="Profile Photo">
-    </div>
+  <!-- ===== HOME / HERO ===== -->
+  <section id="home" class="hero">
+    <svg class="hero-trace" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path d="M0 120 H260 V260 H520 V80 H900 V320 H1200" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M0 480 H180 V620 H460 V420 H760 V700 H1200" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M140 0 V180" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M980 0 V220" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M620 700 V800" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="260" cy="120" r="6" fill="currentColor"/>
+      <circle cx="520" cy="260" r="6" fill="currentColor"/>
+      <circle cx="900" cy="80" r="6" fill="currentColor"/>
+      <circle cx="180" cy="480" r="6" fill="currentColor"/>
+      <circle cx="460" cy="620" r="6" fill="currentColor"/>
+      <circle cx="760" cy="420" r="6" fill="currentColor"/>
+      <circle cx="140" cy="180" r="6" fill="currentColor"/>
+      <circle cx="980" cy="220" r="6" fill="currentColor"/>
+    </svg>
 
-    <div class="home-text">
-      <div class="text-adjust">
-      <h1>Hello, I'm <span>Kristiasara Natamora</span></h1>
-      <p>
-       I am a fifth-semester <strong>Computer Engineering</strong> student at Multimedia Nusantara University with academic interests in web development, embedded systems, networking, image processing, and Python programming. 
-       These areas have helped me build a strong technical foundation and deepen my understanding of how software and hardware integrate to create effective computing solutions.
-      </p>
-      <p>
-        Alongside my studies, I have actively participated in organizational activities that strengthened my skills in MS Excel, data management, teamwork, coordination, communication, and content writing. These experiences also enhanced my leadership, public speaking, event coordination, and time-management abilities. 
-        Driven by digital innovation and continuous learning, I enjoy collaborating in team environments, contributing to user-oriented solutions, and expanding my technical expertise while applying my organizational skills to support impactful and efficient technology development.
-      </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section project-section">
-    <h2>Portfolio</h2>
-
-    <h3 class="category-title">Completed Projects</h3>
-    <div class="project-grid">
-      <div class="project-card">
-        <h4>GDC UMN</h4>
-        <p class="project-date">October – December 2024</p>
-        <p>
-          Developed a responsive web interface using HTML, CSS, and JavaScript for a student organization (UKM/LSO) at Multimedia Nusantara University.
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-role" data-i18n="home.role">Computer Engineering Student · UI/UX Frontend Developer Intern</p>
+        <h1 class="hero-name">Kristiasara<br>Natamora</h1>
+        <p class="hero-desc" data-i18n-html="home.p1">
+          I am a seventh-semester <strong>Computer Engineering</strong> student at Multimedia Nusantara University, currently interning as a UI/UX Frontend Developer at PT Indocyber Global Teknologi. My academic interests include web development, embedded systems, networking, image processing, and Python programming, which have helped me build a strong technical foundation in how software and hardware integrate to create effective computing solutions.
         </p>
-        <a href="https://uas-pti-lec-lab-final-responsive-version.vercel.app/" target="_blank" class="project-link">Visit Project ↗</a>
+        <p class="hero-desc" data-i18n="home.p2">
+          Alongside my studies, I have actively participated in organizational activities that strengthened my skills in MS Excel, data management, teamwork, coordination, communication, and content writing. These experiences also enhanced my leadership, public speaking, event coordination, and time-management abilities. Driven by digital innovation and continuous learning, I enjoy collaborating in team environments, contributing to user-oriented solutions, and expanding my technical expertise while applying my organizational skills to support impactful and efficient technology development.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary" data-i18n="home.cta.work">See my work</a>
+          <a href="#contact" class="btn-ghost" data-i18n="home.cta.contact">Get in touch</a>
+        </div>
       </div>
 
-      <div class="project-card">
-        <h4>Every Nation Gading Serpong</h4>
-        <p class="project-date">April – June 2025</p>
-        <p>
-          Built a full-stack website using HTML, PHP, Laravel, CSS, API, and MySQL for a client-based project focusing on user functionality and design.
-        </p>
-        <a href="https://everynationserpong.com/" target="_blank" class="project-link">Visit Project ↗</a>
-      </div>
-    </div>
-
-    <h3 class="category-title">On-Going Projects</h3>
-    <div class="project-grid">
-      <div class="project-card">
-        <h4>SMART_HELMET</h4>
-        <p class="project-date">Pervasive & Embedded — August – Present</p>
-        <p>
-          Developing an IoT-based helmet system with a simulated sensor interface.
-          Frontend: React.js, HTML, css | Backend: PHP, JavaScript, MySQL.
-        </p>
-        <p>
-          <a href="https://github.com/Kristiasara18/SMART_HELMET" target="_blank" class="project-link">Pervasive Repo ↗</a><br>
-          <a href="https://github.com/Laplace-F/Embedeed" target="_blank" class="project-link">Embedded Repo ↗</a><br>
-          <a href="https://youtu.be/GipwQ_WLt2E" target="_blank" class="project-link">Demo Video ↗</a>
-        </p>
-      </div>
-
-      <div class="project-card">
-        <h4>AI Audio Research</h4>
-        <p class="project-date">August 2025 – Present</p>
-        <p>
-          Conducting research on depression detection through audio using prosodic features in bilingual data with segmentation and augmentation.
-        </p>
+      <div class="hero-photo">
+        <img src="images/profile.png" alt="Kristiasara Natamora">
       </div>
     </div>
   </section>
 
-<!-- ===== CERTIFICATES ===== -->
-<section id="certificates" class="section certificate-section">
-  <h2>Certificate</h2>
+  <!-- ===== WORK EXPERIENCE ===== -->
+  <section id="experience" class="experience">
+    <div class="section-inner">
+      <h2 class="section-heading" data-i18n="experience.title">Work Experience</h2>
 
-  <div class="cert-gallery">
-
-    <!-- CERTIFICATE 1 -->
-    <div class="cert-card">
-  <div class="cert-inner">
-    <img src="images/Certivicate1.png" alt="Certificate 1">
-
-    <div class="cert-info">
-      <h3>HCIA-openGauss V1.0 Course — Huawei Technologies</h3>
-      <p>Huawei ICT Academy | Issued: July 2025</p>
-      <p>Completed foundational training...</p>
-
-      <button class="cert-open-btn">
-        <img src="images/open_icon.png" alt="open">
-      </button>
+      <div class="experience-list">
+        <article class="exp-card">
+          <div class="exp-marker"></div>
+          <div class="exp-body">
+            <div class="exp-top">
+              <h3>PT Indocyber Global Teknologi</h3>
+              <span class="exp-date" data-i18n="experience.date">2025 – Present</span>
+            </div>
+            <p class="exp-role" data-i18n="experience.role">UI/UX Frontend Developer Intern</p>
+            <p class="exp-desc" data-i18n="experience.desc">
+              Contributing to the company's website revamp project across a Next.js frontend and a CoreUI-based CMS. Responsibilities include building CMS-managed responsive layouts, configuring Content Security Policy for Google Tag Manager and Google Ads conversion tracking, and implementing responsive UI components sourced from CKEditor content.
+            </p>
+            <ul class="tag-row">
+              <li>Next.js</li>
+              <li>CoreUI CMS</li>
+              <li>Content Security Policy</li>
+              <li>Laravel / Lumen</li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="projects">
+    <div class="section-inner">
+      <h2 class="section-heading" data-i18n="projects.title">Portfolio</h2>
+      <p class="section-sub" data-i18n="projects.completed">Completed Projects</p>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-top">
+            <h3>GDC UMN</h3>
+            <span class="project-date">October – December 2024</span>
+          </div>
+          <p data-i18n="projects.gdc.desc">
+            Developed a responsive web interface using HTML, CSS, and JavaScript for a student organization (UKM/LSO) at Multimedia Nusantara University, in collaboration with Game Development UMN.
+          </p>
+          <ul class="tag-row">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+          <a href="https://uas-pti-lec-lab-final-responsive-version.vercel.app/" target="_blank" class="project-link" data-i18n="projects.visit">Visit Project ↗</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Every Nation Gading Serpong</h3>
+            <span class="project-date">April – June 2025</span>
+          </div>
+          <p data-i18n="projects.everynation.desc">
+            Built a full-stack website using HTML, PHP, Laravel, CSS, API, and MySQL for a client-based project, delivering a complete and client-oriented web solution for Every Nation Gading Serpong.
+          </p>
+          <ul class="tag-row">
+            <li>Laravel</li><li>PHP</li><li>MySQL</li><li>API</li>
+          </ul>
+          <a href="https://everynationserpong.com/" target="_blank" class="project-link" data-i18n="projects.visit">Visit Project ↗</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>SMART_HELMET</h3>
+            <span class="project-date">August – December 2025</span>
+          </div>
+          <p data-i18n="projects.smarthelmet.desc">
+            Built a pervasive/embedded system interface for a smart helmet with a simulated sensor data pipeline. Developed the frontend with React.js and the backend with PHP, JavaScript, and MySQL for data processing and communication.
+          </p>
+          <ul class="tag-row">
+            <li>React.js</li><li>PHP</li><li>MySQL</li><li>Embedded</li>
+          </ul>
+          <div class="project-link-row">
+            <a href="http://smarthelmet.mytim.me/" target="_blank" class="project-link" data-i18n="projects.visit">Visit Project ↗</a>
+            <a href="https://github.com/Kristiasara18/SMART_HELMET" target="_blank" class="project-link" data-i18n="projects.pervasiveRepo">Pervasive Repo ↗</a>
+            <a href="https://github.com/Laplace-F/Embedeed" target="_blank" class="project-link" data-i18n="projects.embeddedRepo">Embedded Repo ↗</a>
+            <a href="https://youtu.be/GipwQ_WLt2E" target="_blank" class="project-link" data-i18n="projects.demoVideo">Demo Video ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATES ===== -->
+  <section id="certificates" class="certificates">
+    <div class="section-inner">
+      <h2 class="section-heading" data-i18n="certificates.title">Certificate</h2>
+
+      <div class="cert-gallery">
+        <div class="cert-card">
+          <div class="cert-thumb">
+            <img src="images/Certivicate1.png" alt="HCIA-openGauss Certificate">
+          </div>
+          <div class="cert-info">
+            <h3>HCIA-openGauss V1.0 Course — Huawei Technologies</h3>
+            <p class="cert-meta"><span data-i18n="certificates.issuer">Huawei ICT Academy</span> · <span data-i18n="certificates.issued">Issued: July 2025</span></p>
+            <p data-i18n="certificates.desc">Completed foundational training in database systems with openGauss, focusing on database architecture, data management, and system fundamentals.</p>
+            <button class="cert-open-btn" data-i18n="certificates.view">View Certificate ↗</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cert-popup" id="certPopup">
+    <span class="close-popup" id="closePopup">&times;</span>
+    <img id="popupImg" src="">
   </div>
-</div>
-    </div>
-</section>
-<div class="cert-popup" id="certPopup">
-  <span class="close-popup" id="closePopup">&times;</span>
-  <img id="popupImg" src="">
-</div>
 
   <!-- ===== CONTACT ===== -->
-<section id="contact" class="section contact-section">
-
-  <div class="contact-container">
-
-    <!-- LEFT SIDE: EMAIL FORM -->
-    <form class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="text" name="subject" placeholder="Subject" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-
-    <!-- RIGHT SIDE: TITLE + TEXT + SOCIAL -->
-    <div class="contact-right">
-
-      <h2 class="contact-title">
-  <span class="white">Contact</span> <span class="pink">Me.</span>
-</h2>
-
-      <p class="contact-desc">
-        If you need support in software development, IT networking, or embedded development, feel free to reach out.
-      </p>
-
-      <div class="contact-row">
-        <a href="https://linkedin.com/in/kristiasara-natamora-03120828a" target="_blank" class="contact-shape linkedin">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://www.instagram.com/moraggu?igsh=eXRmNnB2MnlnaXNj" target="_blank" class="contact-shape instagram">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="https://wa.me/6282287976337" target="_blank" class="contact-shape whatsapp">
-          <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
+  <section id="contact" class="contact">
+    <div class="section-inner contact-inner">
+      <div class="contact-left">
+        <h2 class="contact-title">
+          <span data-i18n="contact.title1">Contact</span> <em data-i18n="contact.title2">Me.</em>
+        </h2>
+        <p class="contact-desc" data-i18n="contact.desc">
+          If you need support in software development, IT networking, or embedded development, feel free to reach out.
+        </p>
+        <div class="contact-row">
+          <a href="https://linkedin.com/in/kristiasara-natamora-03120828a" target="_blank" class="contact-pill">LinkedIn</a>
+          <a href="https://www.instagram.com/moraggu?igsh=eXRmNnB2MnlnaXNj" target="_blank" class="contact-pill">Instagram</a>
+          <a href="https://wa.me/6282287976337" target="_blank" class="contact-pill">WhatsApp</a>
+        </div>
       </div>
 
+      <form class="contact-form">
+        <input type="text" name="name" data-i18n-placeholder="contact.form.name" placeholder="Your Name" required>
+        <input type="email" name="email" data-i18n-placeholder="contact.form.email" placeholder="Your Email" required>
+        <input type="text" name="subject" data-i18n-placeholder="contact.form.subject" placeholder="Subject" required>
+        <textarea name="message" data-i18n-placeholder="contact.form.message" placeholder="Your Message" required></textarea>
+        <button type="submit" data-i18n="contact.send">Send Message</button>
+      </form>
     </div>
+  </section>
 
-  </div>
-</section>
-
-  <footer>© 2025 Kristiasara Natamora — All Rights Reserved.</footer>
+  <footer>
+    <span data-i18n="footer.text">© 2025 Kristiasara Natamora — All Rights Reserved.</span>
+  </footer>
 
   <script src="script.js"></script>
-  <script>
-  const popup = document.getElementById("certPopup");
-  const popupImg = document.getElementById("popupImg");
-  const closePopup = document.getElementById("closePopup");
-
-  document.querySelectorAll(".cert-card").forEach((card) => {
-    const img = card.querySelector("img");
-    const btn = card.querySelector(".cert-open-btn");
-
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      popup.style.display = "flex";
-      popupImg.src = img.src;
-    });
-  });
-
-  closePopup.addEventListener("click", () => {
-    popup.style.display = "none";
-  });
-
-  // klik area luar gambar → tutup
-  popup.addEventListener("click", (e) => {
-    if (e.target === popup) popup.style.display = "none";
-  });
-</script>
-
 </body>
-
-<script>
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  });
-
-  sectionObserver.observe(document.querySelector('.project-section'));
-</script>
-
 </html>
