@@ -374,7 +374,11 @@
     </div>
 
     <div class="contact-container">
-      <form class="contact-form reveal" action="https://formsubmit.co/kristiasarasara@gmail.com" method="POST">
+      <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/kristiasarasara@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from portfolio website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none">
         <input type="text" name="name" placeholder="Your Name" class="i18n-ph" data-en-ph="Your Name" data-id-ph="Nama Anda" required>
         <input type="email" name="email" placeholder="Your Email" class="i18n-ph" data-en-ph="Your Email" data-id-ph="Email Anda" required>
         <input type="text" name="subject" placeholder="Subject" class="i18n-ph" data-en-ph="Subject" data-id-ph="Subjek" required>
@@ -407,6 +411,20 @@
   <footer>
     <p class="i18n" data-en="&copy; 2026 Kristiasara Natamora — All Rights Reserved." data-id="&copy; 2026 Kristiasara Natamora — Seluruh Hak Cipta Dilindungi.">&copy; 2026 Kristiasara Natamora — All Rights Reserved.</p>
   </footer>
+
+  <!-- ===== FORM SUCCESS / STATUS POPUP ===== -->
+  <div class="form-popup" id="formPopup">
+    <div class="form-popup-box">
+      <div class="fp-icon" id="fpIcon"><i class="fa-solid fa-check"></i></div>
+      <h3 id="fpTitle" class="i18n" data-en="Message Sent!" data-id="Pesan Terkirim!">Message Sent!</h3>
+      <p id="fpText" class="i18n"
+         data-en="Thank you for reaching out. Your message has been delivered — I'll get back to you soon."
+         data-id="Terima kasih telah menghubungi. Pesan Anda sudah terkirim — saya akan segera membalas.">
+        Thank you for reaching out. Your message has been delivered — I'll get back to you soon.
+      </p>
+      <button type="button" id="formPopupClose" class="i18n" data-en="Close" data-id="Tutup">Close</button>
+    </div>
+  </div>
 
   <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
 
