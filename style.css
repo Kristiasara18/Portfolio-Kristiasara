@@ -12,13 +12,14 @@ body {
   color: #ffffff; /* teks putih agar kontras */
 }
 
-/* ---------- THEME BLACKPINK ---------- */
+/* ---------- THEME MAROON ---------- */
 :root {
-  --pink: #f43f6f; /* pink utama */
-  --pink-soft: #f54a74; /* pink lebih soft (untuk hover) */
-  --pink-light: #ff8ba3; /* pink muda */
+  --maroon: #800020;        /* maroon utama */
+  --maroon-soft: #9c2b42;   /* maroon lebih soft (untuk hover) */
+  --maroon-light: #c76b7c;  /* maroon muda / rose */
+  --maroon-dark: #4a0416;   /* maroon gelap */
   --black: #000000;
-  --black-light: #222222; /* hitam muda untuk card */
+  --black-light: #222222;   /* hitam muda untuk card */
 }
 
 /* ===== HEADER ===== */
@@ -27,7 +28,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: #000000; /* UBAH: header hitam */
+  background: #000000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 
@@ -42,11 +43,17 @@ header {
 .logo {
   font-size: 24px;
   font-weight: 700;
-  color: #f43f6f; /* UBAH: pink */
+  color: var(--maroon-light);
   margin-left: -20px;
 }
 
 /* NAV LIST */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -56,7 +63,7 @@ header {
 
 /* NAV LINKS */
 .nav-links a {
-  color: #ffffff; /* UBAH: putih */
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   padding: 6px 8px;
@@ -64,15 +71,35 @@ header {
   transition: 0.3s;
 }
 
-/* Hover → Pink */
+/* Hover → Maroon */
 .nav-links a:hover {
-  color: #d60039; /* UBAH: hover pink */
-  background: transparent; /* HAPUS background hijau sebelumnya */
+  color: var(--maroon-light);
+  background: transparent;
 }
 
-/* Saat ditekan → Pink */
+/* Saat ditekan → Maroon */
 .nav-links a:active {
-  color: #d60039;
+  color: var(--maroon-light);
+}
+
+/* LANGUAGE TOGGLE */
+.lang-toggle {
+  background: transparent;
+  border: 1.5px solid var(--maroon-light);
+  color: var(--maroon-light);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  letter-spacing: 0.5px;
+}
+
+.lang-toggle:hover {
+  background: var(--maroon);
+  color: #fff;
+  border-color: var(--maroon);
 }
 
 /* MOBILE MENU ICON */
@@ -82,7 +109,7 @@ header {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #ffffff; /* UBAH: putih */
+  color: #ffffff;
 }
 
 /* ===== HOME ===== */
@@ -145,7 +172,7 @@ header {
 }
 
 .home-text h1 span {
-  color: #f43f6f;
+  color: var(--maroon);
 }
 
 .home-text p {
@@ -159,7 +186,7 @@ header {
 .btn {
   display: inline-block;
   padding: 12px 26px;
-  background: var(--green);
+  background: var(--maroon);
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
@@ -170,7 +197,7 @@ header {
 }
 
 .btn:hover {
-  background: #7c8c66;
+  background: var(--maroon-dark);
 }
 
 /* ===== RESPONSIVE (HOME) ===== */
@@ -192,10 +219,90 @@ header {
   .home-text p { font-size: 0.95rem; }
 }
 
+/* ===== WORK EXPERIENCE ===== */
+.experience-section {
+  padding: 100px 10%;
+  background: #000000;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.experience-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-section h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  color: var(--maroon-light);
+  font-weight: 900;
+  margin-bottom: 45px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 16px;
+  border-left: 5px solid var(--maroon);
+  box-shadow: 0 4px 20px rgba(128, 0, 32, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(128, 0, 32, 0.25);
+}
+
+.experience-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.experience-head h4 {
+  color: var(--maroon);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.experience-date {
+  font-style: italic;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.experience-role {
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.experience-card p:not(.experience-date):not(.experience-role) {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: #222;
+}
+
 /* ===== PROJECTS ===== */
 .project-section {
   padding: 100px 10%;
-  background: var(--green-opaque);
+  background: #000000;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -209,7 +316,7 @@ header {
 .project-section h2 {
   text-align: center;
   font-size: 5rem;
-  color: #f43f6f;
+  color: var(--maroon-light);
   font-weight: 900;
   margin-bottom: 20px;
   font-family: "Cormorant Garamond", serif;
@@ -239,29 +346,19 @@ header {
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.06);
 
-  /* BAYANGAN #d60039 LEBIH TERANG */
-  box-shadow: 0 4px 20px rgba(214, 0, 57, 0.12);  /* 12% opacity */
-  
+  box-shadow: 0 4px 20px rgba(128, 0, 32, 0.12);
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-
-  /* BAYANGAN HOVER (sedikit lebih kuat tapi tetap soft) */
-  box-shadow: 0 8px 28px rgba(214, 0, 57, 0.18); /* 18% opacity */
-}
-
-/* HOVER */
-.project-card:hover {
-  transform: translateY(-8px);
-  /* Pink shadow lebih besar saat hover */
-  box-shadow: 0 8px 25px rgba(214, 0, 57, 0.32);
+  box-shadow: 0 8px 25px rgba(128, 0, 32, 0.3);
 }
 
 /* Title inside the card */
 .project-card h4 {
-  color: var(--green);
+  color: var(--maroon);
   margin-bottom: 10px;
   font-size: 1.4rem;
   font-weight: 700;
@@ -285,20 +382,20 @@ header {
 
 /* link */
 .project-link {
-  color: #4a6040;  /* warna normal */
+  color: var(--maroon-soft);
   font-weight: 600;
   transition: 0.2s ease;
 }
 
 /* Saat mouse di hover */
 .project-link:hover {
-  color: #FF789B;   /* pink */
+  color: var(--maroon-light);
   text-decoration: underline;
 }
 
 /* Saat link ditekan (active) */
 .project-link:active {
-  color: #FF789B;
+  color: var(--maroon-light);
 }
 
 /* ===== CERTIFICATES ===== */
@@ -309,7 +406,7 @@ header {
 
 .certificate-section h2 {
   text-align: center;
-  color: #f43f6f;
+  color: var(--maroon);
   font-size: 3.5rem;
   font-weight: 1000;
   margin-bottom: 40px;
@@ -354,16 +451,15 @@ header {
   left: 0;
   right: 0;
 
-  /* sedikit terlihat sebelum hover */
   bottom: -70%;
   height: 100%;
   padding: 25px;
 
   background: linear-gradient(
     to bottom,
-    rgba(255, 150, 170, 0.0),
-    rgba(255, 140, 170, 0.45),
-    rgba(255, 120, 155, 0.85)
+    rgba(128, 0, 32, 0.0),
+    rgba(128, 0, 32, 0.45),
+    rgba(128, 0, 32, 0.85)
   );
   backdrop-filter: blur(5px);
   color: black;
@@ -388,19 +484,19 @@ header {
   font-size: 1.2rem;
   margin-bottom: 10px;
   font-weight: 700;
-  color: black;
+  color: #fff;
 }
 
 .cert-info p {
   font-size: 0.9rem;
   margin: 4px 0;
-  color: black;
+  color: #fff;
 }
 
 /* ========================================= CONTACT SECTION ========================================= */
 .contact-section {
   padding: 80px 6% 100px;
-  background: var(--green-opaque);
+  background: #000000;
 }
 
 .contact-title {
@@ -412,11 +508,11 @@ header {
 
 /* warna masing-masing */
 .contact-title .white {
-  color: #ffffff; /* putih */
+  color: #ffffff;
 }
 
 .contact-title .pink {
-  color: #f43f6f; /* pink yg kamu mau */
+  color: var(--maroon-light);
 }
 
 /* Layout */
@@ -453,8 +549,8 @@ header {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--green);
-  box-shadow: 0 0 4px rgba(142,156,120,0.3);
+  border-color: var(--maroon);
+  box-shadow: 0 0 4px rgba(128,0,32,0.3);
 }
 
 .contact-form textarea {
@@ -462,9 +558,9 @@ header {
   resize: none;
 }
 
-/* TOMBOL SEND YANG JELAS */
+/* TOMBOL SEND */
 .contact-form button {
-  background: #ff8ba3;      /* hijau gelap elegan, tidak akan menyatu */
+  background: var(--maroon-light);
   color: white;
   padding: 14px;
   border: none;
@@ -474,14 +570,14 @@ header {
   transition: 0.3s ease;
 }
 
-/* Saat hover jadi pink */
+/* Saat hover jadi maroon */
 .contact-form button:hover {
-  background: #f43f6f;
+  background: var(--maroon);
 }
 
-/* Saat ditekan (active) tetap pink tapi sedikit lebih gelap */
+/* Saat ditekan (active) tetap maroon tapi sedikit lebih gelap */
 .contact-form button:active {
-  background: #d83763;
+  background: var(--maroon-dark);
 }
 
 /* SOCIAL SHAPES */
@@ -586,7 +682,7 @@ header {
 }
 
 .contact-title .black { color: #000; }
-.contact-title .pink { color: #FF789B; }
+.contact-title .pink { color: var(--maroon-light); }
 
 .contact-desc {
   font-size: 1.25rem;
@@ -639,10 +735,19 @@ footer .footer-content {
     width: 100%;
     max-width: 420px;
   }
+
+  .experience-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 620px) {
   .menu-toggle { display: inline-block; }
+
+  nav {
+    gap: 10px;
+  }
 
   .nav-links {
     display: none;
@@ -650,7 +755,7 @@ footer .footer-content {
     right: 6%;
     top: 56px;
     flex-direction: column;
-    background: var(--green-strong-80);
+    background: var(--maroon-dark);
     padding: 12px;
     border-radius: 8px;
     z-index: 999;
@@ -658,5 +763,10 @@ footer .footer-content {
 
   .nav-links.active {
     display: flex;
+  }
+
+  .lang-toggle {
+    padding: 5px 10px;
+    font-size: 0.78rem;
   }
 }
