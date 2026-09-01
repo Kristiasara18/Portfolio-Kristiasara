@@ -4,174 +4,357 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Kristiasara Natamora</title>
+  <meta name="description" content="Kristiasara Natamora — Computer Engineering student & Website Developer. Portfolio, projects, experience & certificates." />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header id="site-header">
+  <header id="header">
     <div class="header-inner">
-      <a href="#home" class="brand">Kristiasara<span>.</span></a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#home" data-i18n="nav.home">Home</a></li>
-          <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
-          <li><a href="#projects" data-i18n="nav.portfolio">Portfolio</a></li>
-          <li><a href="#certificates" data-i18n="nav.certificates">Certificate</a></li>
-          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-        </ul>
-        <button id="lang-toggle" class="lang-toggle" aria-label="switch language" type="button">ID</button>
-        <button id="menu-toggle" class="menu-toggle" aria-label="menu">
-          <span></span><span></span><span></span>
+      <a href="#home" class="logo">Kristiasara<span>.</span></a>
+
+      <div class="header-right">
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="i18n" data-en="Home" data-id="Beranda">Home</a></li>
+            <li><a href="#about" class="i18n" data-en="About" data-id="Tentang">About</a></li>
+            <li><a href="#experience" class="i18n" data-en="Experience" data-id="Pengalaman">Experience</a></li>
+            <li><a href="#projects" class="i18n" data-en="Projects" data-id="Proyek">Projects</a></li>
+            <li><a href="#skills" class="i18n" data-en="Skills" data-id="Keahlian">Skills</a></li>
+            <li><a href="#certificates" class="i18n" data-en="Certificate" data-id="Sertifikat">Certificate</a></li>
+            <li><a href="#contact" class="nav-cta i18n" data-en="Contact" data-id="Kontak">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Language switch -->
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" class="active">EN</button>
+          <button type="button" data-lang="id">ID</button>
+        </div>
+
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
         </button>
-      </nav>
+      </div>
     </div>
   </header>
 
   <!-- ===== HOME / HERO ===== -->
   <section id="home" class="hero">
-    <svg class="hero-trace" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <path d="M0 120 H260 V260 H520 V80 H900 V320 H1200" fill="none" stroke="currentColor" stroke-width="2"/>
-      <path d="M0 480 H180 V620 H460 V420 H760 V700 H1200" fill="none" stroke="currentColor" stroke-width="2"/>
-      <path d="M140 0 V180" fill="none" stroke="currentColor" stroke-width="2"/>
-      <path d="M980 0 V220" fill="none" stroke="currentColor" stroke-width="2"/>
-      <path d="M620 700 V800" fill="none" stroke="currentColor" stroke-width="2"/>
-      <circle cx="260" cy="120" r="6" fill="currentColor"/>
-      <circle cx="520" cy="260" r="6" fill="currentColor"/>
-      <circle cx="900" cy="80" r="6" fill="currentColor"/>
-      <circle cx="180" cy="480" r="6" fill="currentColor"/>
-      <circle cx="460" cy="620" r="6" fill="currentColor"/>
-      <circle cx="760" cy="420" r="6" fill="currentColor"/>
-      <circle cx="140" cy="180" r="6" fill="currentColor"/>
-      <circle cx="980" cy="220" r="6" fill="currentColor"/>
-    </svg>
-
-    <div class="hero-inner">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-wrap reveal">
       <div class="hero-text">
-        <p class="hero-role" data-i18n="home.role">Computer Engineering Student · UI/UX Frontend Developer Intern</p>
-        <h1 class="hero-name">Kristiasara<br>Natamora</h1>
-        <p class="hero-desc" data-i18n-html="home.p1">
-          I am a seventh-semester <strong>Computer Engineering</strong> student at Multimedia Nusantara University, currently interning as a UI/UX Frontend Developer at PT Indocyber Global Teknologi. My academic interests include web development, embedded systems, networking, image processing, and Python programming, which have helped me build a strong technical foundation in how software and hardware integrate to create effective computing solutions.
-        </p>
-        <p class="hero-desc" data-i18n="home.p2">
-          Alongside my studies, I have actively participated in organizational activities that strengthened my skills in MS Excel, data management, teamwork, coordination, communication, and content writing. These experiences also enhanced my leadership, public speaking, event coordination, and time-management abilities. Driven by digital innovation and continuous learning, I enjoy collaborating in team environments, contributing to user-oriented solutions, and expanding my technical expertise while applying my organizational skills to support impactful and efficient technology development.
+        <p class="eyebrow"><span class="dot"></span> <span class="i18n" data-en="Available for collaboration" data-id="Terbuka untuk kolaborasi">Available for collaboration</span></p>
+        <h1 class="i18n" data-en="Hi, I'm <span>Kristiasara Natamora</span>" data-id="Halo, saya <span>Kristiasara Natamora</span>">Hi, I'm <span>Kristiasara Natamora</span></h1>
+        <p class="hero-role i18n" data-en="Computer Engineering Student &middot; Website Developer" data-id="Mahasiswa Teknik Komputer &middot; Website Developer">Computer Engineering Student &middot; Website Developer</p>
+        <p class="hero-desc i18n"
+           data-en="A 7th-semester Computer Engineering student at Multimedia Nusantara University, building full-stack web experiences with React.js, Laravel, and PHP — where software and hardware meet to create effective computing solutions."
+           data-id="Mahasiswa Teknik Komputer semester 7 di Universitas Multimedia Nusantara, membangun pengalaman web full-stack dengan React.js, Laravel, dan PHP — tempat perangkat lunak dan perangkat keras bertemu untuk menciptakan solusi komputasi yang efektif.">
+          A 7th-semester Computer Engineering student at Multimedia Nusantara University,
+          building full-stack web experiences with React.js, Laravel, and PHP — where
+          software and hardware meet to create effective computing solutions.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn-primary" data-i18n="home.cta.work">See my work</a>
-          <a href="#contact" class="btn-ghost" data-i18n="home.cta.contact">Get in touch</a>
+          <a href="#projects" class="btn btn-primary"><span class="i18n" data-en="View My Work" data-id="Lihat Karya Saya">View My Work</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-ghost i18n" data-en="Get in Touch" data-id="Hubungi Saya">Get in Touch</a>
         </div>
       </div>
 
       <div class="hero-photo">
-        <img src="images/profile.png" alt="Kristiasara Natamora">
+        <div class="photo-ring"></div>
+        <div class="photo-frame">
+          <img src="images/profile.png" alt="Kristiasara Natamora">
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats reveal">
+      <div class="stat"><strong>4+</strong><span class="i18n" data-en="Projects Completed" data-id="Proyek Selesai">Projects Completed</span></div>
+      <div class="stat"><strong>5</strong><span class="i18n" data-en="Organizational Roles" data-id="Peran Organisasi">Organizational Roles</span></div>
+      <div class="stat"><strong>Sem 7</strong><span class="i18n" data-en="Computer Engineering" data-id="Teknik Komputer">Computer Engineering</span></div>
+      <div class="stat"><strong>2023</strong><span class="i18n" data-en="Class of" data-id="Angkatan">Class of</span></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section about-section">
+    <div class="section-head reveal">
+      <span class="section-tag i18n" data-en="01 — About" data-id="01 — Tentang">01 — About</span>
+      <h2 class="i18n" data-en="Get to know me" data-id="Kenali saya lebih dekat">Get to know me</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <p class="i18n"
+           data-en="I'm a Computer Engineering student at <strong>Multimedia Nusantara University</strong> (Class of 2023), with academic interests in web development, embedded systems, networking, image processing, and Python programming. These areas have given me a strong technical foundation and a deep understanding of how software and hardware integrate."
+           data-id="Saya mahasiswa Teknik Komputer di <strong>Universitas Multimedia Nusantara</strong> (Angkatan 2023), dengan minat akademik pada pengembangan web, sistem embedded, jaringan, pemrosesan citra, dan pemrograman Python. Bidang-bidang ini memberi saya fondasi teknis yang kuat serta pemahaman mendalam tentang bagaimana perangkat lunak dan perangkat keras terintegrasi.">
+          I'm a Computer Engineering student at <strong>Multimedia Nusantara University</strong> (Class of 2023),
+          with academic interests in web development, embedded systems, networking, image processing,
+          and Python programming. These areas have given me a strong technical foundation and a deep
+          understanding of how software and hardware integrate.
+        </p>
+        <p class="i18n"
+           data-en="Alongside my studies, I've actively led and supported organizational activities — strengthening my leadership, public speaking, event coordination, and time-management abilities. Driven by digital innovation and continuous learning, I enjoy collaborating in teams and contributing to user-oriented solutions."
+           data-id="Selain kuliah, saya aktif memimpin dan mendukung berbagai kegiatan organisasi — memperkuat kemampuan kepemimpinan, public speaking, koordinasi acara, dan manajemen waktu. Terdorong oleh inovasi digital dan pembelajaran berkelanjutan, saya senang berkolaborasi dalam tim dan berkontribusi pada solusi yang berorientasi pengguna.">
+          Alongside my studies, I've actively led and supported organizational activities — strengthening
+          my leadership, public speaking, event coordination, and time-management abilities. Driven by
+          digital innovation and continuous learning, I enjoy collaborating in teams and contributing to
+          user-oriented solutions.
+        </p>
+      </div>
+
+      <div class="about-info reveal">
+        <div class="info-row"><i class="fa-solid fa-graduation-cap"></i>
+          <div><span class="i18n" data-en="University" data-id="Universitas">University</span><strong class="i18n" data-en="Multimedia Nusantara University" data-id="Universitas Multimedia Nusantara">Multimedia Nusantara University</strong></div>
+        </div>
+        <div class="info-row"><i class="fa-solid fa-microchip"></i>
+          <div><span class="i18n" data-en="Major" data-id="Jurusan">Major</span><strong class="i18n" data-en="Computer Engineering" data-id="Teknik Komputer">Computer Engineering</strong></div>
+        </div>
+        <div class="info-row"><i class="fa-solid fa-location-dot"></i>
+          <div><span class="i18n" data-en="Based in" data-id="Domisili">Based in</span><strong>Tangerang, Indonesia</strong></div>
+        </div>
+        <div class="info-row"><i class="fa-solid fa-envelope"></i>
+          <div><span>Email</span><strong>kristiasarasara@gmail.com</strong></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== WORK EXPERIENCE ===== -->
-  <section id="experience" class="experience">
-    <div class="section-inner">
-      <h2 class="section-heading" data-i18n="experience.title">Work Experience</h2>
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="section experience-section">
+    <div class="section-head reveal">
+      <span class="section-tag i18n" data-en="02 — Experience" data-id="02 — Pengalaman">02 — Experience</span>
+      <h2 class="i18n" data-en="Where I've worked & led" data-id="Tempat saya bekerja & memimpin">Where I've worked & led</h2>
+    </div>
 
-      <div class="experience-list">
-        <article class="exp-card">
-          <div class="exp-marker"></div>
-          <div class="exp-body">
-            <div class="exp-top">
-              <h3>PT Indocyber Global Teknologi</h3>
-              <span class="exp-date" data-i18n="experience.date">2025 – Present</span>
-            </div>
-            <p class="exp-role" data-i18n="experience.role">UI/UX Frontend Developer Intern</p>
-            <p class="exp-desc" data-i18n="experience.desc">
-              Contributing to the company's website revamp project across a Next.js frontend and a CoreUI-based CMS. Responsibilities include building CMS-managed responsive layouts, configuring Content Security Policy for Google Tag Manager and Google Ads conversion tracking, and implementing responsive UI components sourced from CKEditor content.
-            </p>
-            <ul class="tag-row">
-              <li>Next.js</li>
-              <li>CoreUI CMS</li>
-              <li>Content Security Policy</li>
-              <li>Laravel / Lumen</li>
-            </ul>
-          </div>
-        </article>
+    <h3 class="category-title reveal i18n" data-en="Work Experience" data-id="Pengalaman Kerja">Work Experience</h3>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date i18n" data-en="March 2026 — February 2027 · Current" data-id="Maret 2026 — Februari 2027 · Saat ini">March 2026 — February 2027 · Current</span>
+          <h4 class="i18n" data-en="Website Developer Intern" data-id="Magang Website Developer">Website Developer Intern</h4>
+          <p class="timeline-org">PT Indocyber Global Teknologi</p>
+          <p class="i18n"
+             data-en="Managing the company website's frontend and backend using <strong>React.js</strong> and <strong>Laravel Lumen</strong>. Implementing updates and feature requests from the branding and marketing teams to support ongoing company initiatives."
+             data-id="Mengelola frontend dan backend website perusahaan menggunakan <strong>React.js</strong> dan <strong>Laravel Lumen</strong>. Menerapkan pembaruan dan permintaan fitur dari tim branding dan marketing untuk mendukung inisiatif perusahaan yang sedang berjalan.">
+            Managing the company website's frontend and backend using <strong>React.js</strong> and
+            <strong>Laravel Lumen</strong>. Implementing updates and feature requests from the branding
+            and marketing teams to support ongoing company initiatives.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="category-title reveal i18n" data-en="Organizational Experience" data-id="Pengalaman Organisasi">Organizational Experience</h3>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date i18n" data-en="Feb 2025 — Nov 2025" data-id="Feb 2025 — Nov 2025">Feb 2025 — Nov 2025</span>
+          <h4 class="i18n" data-en="Registration Coordinator — MAXIMA 2025" data-id="Koordinator Registrasi — MAXIMA 2025">Registration Coordinator — MAXIMA 2025</h4>
+          <p class="timeline-org i18n" data-en="Multimedia Nusantara University" data-id="Universitas Multimedia Nusantara">Multimedia Nusantara University</p>
+          <p class="i18n"
+             data-en="Led the registration division: designed the registration system, delegated team tasks, and ensured a smooth, efficient registration process throughout the event."
+             data-id="Memimpin divisi registrasi: merancang sistem registrasi, mendelegasikan tugas tim, dan memastikan proses registrasi berjalan lancar dan efisien sepanjang acara.">Led the registration division: designed the registration system, delegated team tasks, and ensured a smooth, efficient registration process throughout the event.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">Jan 2025 — Dec 2025</span>
+          <h4 class="i18n" data-en="Public Relations Staff — ACES 2025" data-id="Staf Hubungan Masyarakat — ACES 2025">Public Relations Staff — ACES 2025</h4>
+          <p class="timeline-org i18n" data-en="Association of Computer Engineering Students" data-id="Asosiasi Mahasiswa Teknik Komputer">Association of Computer Engineering Students</p>
+          <p class="i18n"
+             data-en="Developed external communication strategies, wrote press releases, and coordinated with media partners in an expanded PR role."
+             data-id="Mengembangkan strategi komunikasi eksternal, menulis siaran pers, dan berkoordinasi dengan mitra media dalam peran PR yang diperluas.">Developed external communication strategies, wrote press releases, and coordinated with media partners in an expanded PR role.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">Aug 2025 — Oct 2025</span>
+          <h4 class="i18n" data-en="Event Staff — Campus Mixer 2025" data-id="Staf Acara — Campus Mixer 2025">Event Staff — Campus Mixer 2025</h4>
+          <p class="timeline-org">X Cellence Point</p>
+          <p class="i18n"
+             data-en="Supported overall event planning and facilitated cross-division collaboration as deputy coordinator, ensuring timely execution of all tasks."
+             data-id="Mendukung perencanaan acara secara keseluruhan dan memfasilitasi kolaborasi antar-divisi sebagai wakil koordinator, memastikan seluruh tugas terlaksana tepat waktu.">Supported overall event planning and facilitated cross-division collaboration as deputy coordinator, ensuring timely execution of all tasks.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">May 2024 — Nov 2024</span>
+          <h4 class="i18n" data-en="Public Relations Staff — ACES Day 2024" data-id="Staf Hubungan Masyarakat — ACES Day 2024">Public Relations Staff — ACES Day 2024</h4>
+          <p class="timeline-org i18n" data-en="Association of Computer Engineering Students" data-id="Asosiasi Mahasiswa Teknik Komputer">Association of Computer Engineering Students</p>
+          <p class="i18n"
+             data-en="Handled communication materials, engaged participants and external partners, and maintained the event's public image, creating and managing content across digital platforms."
+             data-id="Menangani materi komunikasi, berinteraksi dengan peserta dan mitra eksternal, serta menjaga citra publik acara, membuat dan mengelola konten di berbagai platform digital.">Handled communication materials, engaged participants and external partners, and maintained the event's public image, creating and managing content across digital platforms.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">Mar 2024 — Oct 2024</span>
+          <h4 class="i18n" data-en="Registration Staff — MAXIMA 2024" data-id="Staf Registrasi — MAXIMA 2024">Registration Staff — MAXIMA 2024</h4>
+          <p class="timeline-org i18n" data-en="Multimedia Nusantara University" data-id="Universitas Multimedia Nusantara">Multimedia Nusantara University</p>
+          <p class="i18n"
+             data-en="Member of the registration division for UMN's student orientation program, responsible for participant data collection and managing registration flow."
+             data-id="Anggota divisi registrasi untuk program orientasi mahasiswa UMN, bertanggung jawab atas pengumpulan data peserta dan pengelolaan alur registrasi.">Member of the registration division for UMN's student orientation program, responsible for participant data collection and managing registration flow.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="projects">
-    <div class="section-inner">
-      <h2 class="section-heading" data-i18n="projects.title">Portfolio</h2>
-      <p class="section-sub" data-i18n="projects.completed">Completed Projects</p>
+  <section id="projects" class="section project-section">
+    <div class="section-head reveal">
+      <span class="section-tag i18n" data-en="03 — Portfolio" data-id="03 — Portofolio">03 — Portfolio</span>
+      <h2 class="i18n" data-en="Featured Projects" data-id="Proyek Unggulan">Featured Projects</h2>
+      <p class="section-sub i18n" data-en="All projects below are completed and shipped." data-id="Semua proyek di bawah ini telah selesai dan dirilis.">All projects below are completed and shipped.</p>
+    </div>
 
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-top">
-            <h3>GDC UMN</h3>
-            <span class="project-date">October – December 2024</span>
-          </div>
-          <p data-i18n="projects.gdc.desc">
-            Developed a responsive web interface using HTML, CSS, and JavaScript for a student organization (UKM/LSO) at Multimedia Nusantara University, in collaboration with Game Development UMN.
-          </p>
-          <ul class="tag-row">
-            <li>HTML</li><li>CSS</li><li>JavaScript</li>
-          </ul>
-          <a href="https://uas-pti-lec-lab-final-responsive-version.vercel.app/" target="_blank" class="project-link" data-i18n="projects.visit">Visit Project ↗</a>
-        </article>
+    <div class="project-grid">
+      <article class="project-card reveal">
+        <div class="project-top">
+          <span class="project-badge done i18n" data-en="Completed" data-id="Selesai">Completed</span>
+          <span class="project-date">Oct — Dec 2024</span>
+        </div>
+        <h4>GDC UMN — Frontend</h4>
+        <p class="i18n"
+           data-en="Frontend web application built with HTML, CSS, and JavaScript in collaboration with Game Development UMN. Designed and implemented the website interface for a student organization."
+           data-id="Aplikasi web frontend yang dibangun dengan HTML, CSS, dan JavaScript bekerja sama dengan Game Development UMN. Merancang dan mengimplementasikan antarmuka website untuk sebuah organisasi mahasiswa.">
+          Frontend web application built with HTML, CSS, and JavaScript in collaboration with
+          Game Development UMN. Designed and implemented the website interface for a student organization.
+        </p>
+        <div class="tech-row"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <a href="https://uas-pti-lec-lab-final-responsive-version.vercel.app/" target="_blank" rel="noopener" class="project-link"><span class="i18n" data-en="Visit Project" data-id="Kunjungi Proyek">Visit Project</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
 
-        <article class="project-card">
-          <div class="project-top">
-            <h3>Every Nation Gading Serpong</h3>
-            <span class="project-date">April – June 2025</span>
-          </div>
-          <p data-i18n="projects.everynation.desc">
-            Built a full-stack website using HTML, PHP, Laravel, CSS, API, and MySQL for a client-based project, delivering a complete and client-oriented web solution for Every Nation Gading Serpong.
-          </p>
-          <ul class="tag-row">
-            <li>Laravel</li><li>PHP</li><li>MySQL</li><li>API</li>
-          </ul>
-          <a href="https://everynationserpong.com/" target="_blank" class="project-link" data-i18n="projects.visit">Visit Project ↗</a>
-        </article>
+      <article class="project-card reveal">
+        <div class="project-top">
+          <span class="project-badge done i18n" data-en="Completed" data-id="Selesai">Completed</span>
+          <span class="project-date">Apr — Jun 2025</span>
+        </div>
+        <h4>Every Nation Gading Serpong</h4>
+        <p class="i18n"
+           data-en="Full-stack client website built with HTML, PHP, Laravel, CSS, API, and MySQL. Collaborated with an external client on both frontend and backend to deliver a complete, client-oriented solution."
+           data-id="Website klien full-stack yang dibangun dengan HTML, PHP, Laravel, CSS, API, dan MySQL. Berkolaborasi dengan klien eksternal pada frontend dan backend untuk memberikan solusi lengkap yang berorientasi klien.">
+          Full-stack client website built with HTML, PHP, Laravel, CSS, API, and MySQL. Collaborated with
+          an external client on both frontend and backend to deliver a complete, client-oriented solution.
+        </p>
+        <div class="tech-row"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>API</span></div>
+        <a href="https://everynationserpong.com/" target="_blank" rel="noopener" class="project-link"><span class="i18n" data-en="Visit Project" data-id="Kunjungi Proyek">Visit Project</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
 
-        <article class="project-card">
-          <div class="project-top">
-            <h3>SMART_HELMET</h3>
-            <span class="project-date">August – December 2025</span>
-          </div>
-          <p data-i18n="projects.smarthelmet.desc">
-            Built a pervasive/embedded system interface for a smart helmet with a simulated sensor data pipeline. Developed the frontend with React.js and the backend with PHP, JavaScript, and MySQL for data processing and communication.
-          </p>
-          <ul class="tag-row">
-            <li>React.js</li><li>PHP</li><li>MySQL</li><li>Embedded</li>
-          </ul>
-          <div class="project-link-row">
-            <a href="http://smarthelmet.mytim.me/" target="_blank" class="project-link" data-i18n="projects.visit">Visit Project ↗</a>
-            <a href="https://github.com/Kristiasara18/SMART_HELMET" target="_blank" class="project-link" data-i18n="projects.pervasiveRepo">Pervasive Repo ↗</a>
-            <a href="https://github.com/Laplace-F/Embedeed" target="_blank" class="project-link" data-i18n="projects.embeddedRepo">Embedded Repo ↗</a>
-            <a href="https://youtu.be/GipwQ_WLt2E" target="_blank" class="project-link" data-i18n="projects.demoVideo">Demo Video ↗</a>
-          </div>
-        </article>
+      <article class="project-card reveal">
+        <div class="project-top">
+          <span class="project-badge done i18n" data-en="Completed" data-id="Selesai">Completed</span>
+          <span class="project-date">Aug — Dec 2025</span>
+        </div>
+        <h4>SMART_HELMET</h4>
+        <p class="i18n"
+           data-en="Pervasive & embedded system — an IoT helmet interface designed to integrate with a physical sensor. Frontend in React.js; backend in PHP, JavaScript, and MySQL for data processing and communication."
+           data-id="Sistem pervasive & embedded — antarmuka helm IoT yang dirancang untuk terintegrasi dengan sensor fisik. Frontend dengan React.js; backend dengan PHP, JavaScript, dan MySQL untuk pemrosesan data dan komunikasi.">
+          Pervasive & embedded system — an IoT helmet interface designed to integrate with a physical sensor.
+          Frontend in React.js; backend in PHP, JavaScript, and MySQL for data processing and communication.
+        </p>
+        <div class="tech-row"><span>React.js</span><span>PHP</span><span>MySQL</span><span>IoT</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Kristiasara18/SMART_HELMET" target="_blank" rel="noopener" class="project-link"><span class="i18n" data-en="Pervasive Repo" data-id="Repo Pervasive">Pervasive Repo</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <a href="https://github.com/Laplace-F/Embedeed" target="_blank" rel="noopener" class="project-link"><span class="i18n" data-en="Embedded Repo" data-id="Repo Embedded">Embedded Repo</span> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <a href="https://youtu.be/GipwQ_WLt2E" target="_blank" rel="noopener" class="project-link"><span class="i18n" data-en="Demo Video" data-id="Video Demo">Demo Video</span> <i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-top">
+          <span class="project-badge done i18n" data-en="Completed" data-id="Selesai">Completed</span>
+          <span class="project-date">Aug 2025</span>
+        </div>
+        <h4>AI Audio Research</h4>
+        <p class="i18n"
+           data-en="Research on depression detection through audio using prosodic features in bilingual data, applying segmentation and augmentation techniques for robust analysis."
+           data-id="Penelitian deteksi depresi melalui audio menggunakan fitur prosodik pada data bilingual, menerapkan teknik segmentasi dan augmentasi untuk analisis yang andal.">
+          Research on depression detection through audio using prosodic features in bilingual data,
+          applying segmentation and augmentation techniques for robust analysis.
+        </p>
+        <div class="tech-row"><span>Python</span><span>Audio DSP</span><span>Research</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section skills-section">
+    <div class="section-head reveal">
+      <span class="section-tag i18n" data-en="04 — Skills" data-id="04 — Keahlian">04 — Skills</span>
+      <h2 class="i18n" data-en="What I bring to the table" data-id="Apa yang saya tawarkan">What I bring to the table</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skills-block reveal">
+        <h3><i class="fa-solid fa-code"></i> <span class="i18n" data-en="Hard Skills" data-id="Keahlian Teknis">Hard Skills</span></h3>
+        <div class="chip-row">
+          <span class="chip">React.js</span>
+          <span class="chip">Laravel</span>
+          <span class="chip">PHP</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip i18n" data-en="Content Creation" data-id="Pembuatan Konten">Content Creation</span>
+          <span class="chip i18n" data-en="Content Writing" data-id="Penulisan Konten">Content Writing</span>
+          <span class="chip">Microsoft Word</span>
+          <span class="chip">Microsoft Excel</span>
+          <span class="chip">Google Workspace</span>
+        </div>
+      </div>
+
+      <div class="skills-block reveal">
+        <h3><i class="fa-solid fa-people-group"></i> <span class="i18n" data-en="Soft Skills" data-id="Keahlian Non-Teknis">Soft Skills</span></h3>
+        <div class="chip-row">
+          <span class="chip i18n" data-en="Teamwork" data-id="Kerja Sama Tim">Teamwork</span>
+          <span class="chip i18n" data-en="Public Speaking" data-id="Berbicara di Depan Umum">Public Speaking</span>
+          <span class="chip i18n" data-en="Event Coordination" data-id="Koordinasi Acara">Event Coordination</span>
+          <span class="chip i18n" data-en="Leadership" data-id="Kepemimpinan">Leadership</span>
+          <span class="chip i18n" data-en="Time Management" data-id="Manajemen Waktu">Time Management</span>
+          <span class="chip i18n" data-en="Communication" data-id="Komunikasi">Communication</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CERTIFICATES ===== -->
-  <section id="certificates" class="certificates">
-    <div class="section-inner">
-      <h2 class="section-heading" data-i18n="certificates.title">Certificate</h2>
+  <section id="certificates" class="section certificate-section">
+    <div class="section-head reveal">
+      <span class="section-tag i18n" data-en="05 — Certificate" data-id="05 — Sertifikat">05 — Certificate</span>
+      <h2 class="i18n" data-en="Certification" data-id="Sertifikasi">Certification</h2>
+    </div>
 
-      <div class="cert-gallery">
-        <div class="cert-card">
-          <div class="cert-thumb">
-            <img src="images/Certivicate1.png" alt="HCIA-openGauss Certificate">
-          </div>
+    <div class="cert-gallery reveal">
+      <div class="cert-card">
+        <div class="cert-inner">
+          <img src="images/Certivicate1.png" alt="HCIA-openGauss Certificate">
           <div class="cert-info">
-            <h3>HCIA-openGauss V1.0 Course — Huawei Technologies</h3>
-            <p class="cert-meta"><span data-i18n="certificates.issuer">Huawei ICT Academy</span> · <span data-i18n="certificates.issued">Issued: July 2025</span></p>
-            <p data-i18n="certificates.desc">Completed foundational training in database systems with openGauss, focusing on database architecture, data management, and system fundamentals.</p>
-            <button class="cert-open-btn" data-i18n="certificates.view">View Certificate ↗</button>
+            <h3>HCIA-openGauss V1.0 Course</h3>
+            <p class="cert-issuer">Huawei Technologies</p>
+            <p class="i18n" data-en="Huawei ICT Academy · Issued July 2025" data-id="Huawei ICT Academy · Diterbitkan Juli 2025">Huawei ICT Academy · Issued July 2025</p>
+            <p class="cert-desc i18n"
+               data-en="Foundational training in database systems with openGauss — covering database architecture, data management, and system fundamentals."
+               data-id="Pelatihan dasar sistem basis data dengan openGauss — mencakup arsitektur basis data, manajemen data, dan fundamental sistem.">Foundational training in database systems with openGauss — covering database architecture, data management, and system fundamentals.</p>
+            <button class="cert-open-btn" aria-label="Open certificate">
+              <i class="fa-solid fa-magnifying-glass-plus"></i> <span class="i18n" data-en="View" data-id="Lihat">View</span>
+            </button>
           </div>
         </div>
       </div>
@@ -180,39 +363,52 @@
 
   <div class="cert-popup" id="certPopup">
     <span class="close-popup" id="closePopup">&times;</span>
-    <img id="popupImg" src="">
+    <img id="popupImg" src="" alt="Certificate preview">
   </div>
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact" class="contact">
-    <div class="section-inner contact-inner">
-      <div class="contact-left">
-        <h2 class="contact-title">
-          <span data-i18n="contact.title1">Contact</span> <em data-i18n="contact.title2">Me.</em>
-        </h2>
-        <p class="contact-desc" data-i18n="contact.desc">
-          If you need support in software development, IT networking, or embedded development, feel free to reach out.
+  <section id="contact" class="section contact-section">
+    <div class="section-head reveal">
+      <span class="section-tag i18n" data-en="06 — Contact" data-id="06 — Kontak">06 — Contact</span>
+      <h2 class="i18n" data-en="Let's work together" data-id="Mari bekerja sama">Let's work together</h2>
+    </div>
+
+    <div class="contact-container">
+      <form class="contact-form reveal" action="https://formsubmit.co/kristiasarasara@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" class="i18n-ph" data-en-ph="Your Name" data-id-ph="Nama Anda" required>
+        <input type="email" name="email" placeholder="Your Email" class="i18n-ph" data-en-ph="Your Email" data-id-ph="Email Anda" required>
+        <input type="text" name="subject" placeholder="Subject" class="i18n-ph" data-en-ph="Subject" data-id-ph="Subjek" required>
+        <textarea name="message" placeholder="Your Message" class="i18n-ph" data-en-ph="Your Message" data-id-ph="Pesan Anda" required></textarea>
+        <button type="submit"><span class="i18n" data-en="Send Message" data-id="Kirim Pesan">Send Message</span> <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+
+      <div class="contact-right reveal">
+        <p class="contact-desc i18n"
+           data-en="Need support in software development, IT networking, or embedded development? Feel free to reach out — I'd love to hear from you."
+           data-id="Butuh dukungan dalam pengembangan perangkat lunak, jaringan IT, atau pengembangan embedded? Jangan ragu untuk menghubungi — saya senang mendengar dari Anda.">
+          Need support in software development, IT networking, or embedded development?
+          Feel free to reach out — I'd love to hear from you.
         </p>
+
+        <div class="contact-methods">
+          <a href="mailto:kristiasarasara@gmail.com" class="contact-line"><i class="fa-solid fa-envelope"></i> kristiasarasara@gmail.com</a>
+          <a href="https://wa.me/6282171337229" target="_blank" rel="noopener" class="contact-line"><i class="fa-brands fa-whatsapp"></i> (+62) 821-7133-7229</a>
+        </div>
+
         <div class="contact-row">
-          <a href="https://linkedin.com/in/kristiasara-natamora-03120828a" target="_blank" class="contact-pill">LinkedIn</a>
-          <a href="https://www.instagram.com/moraggu?igsh=eXRmNnB2MnlnaXNj" target="_blank" class="contact-pill">Instagram</a>
-          <a href="https://wa.me/6282287976337" target="_blank" class="contact-pill">WhatsApp</a>
+          <a href="https://linkedin.com/in/kristiasara-natamora-03120828a" target="_blank" rel="noopener" class="contact-shape linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://www.instagram.com/moraggu" target="_blank" rel="noopener" class="contact-shape instagram"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="https://github.com/Kristiasara18" target="_blank" rel="noopener" class="contact-shape github"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
-
-      <form class="contact-form">
-        <input type="text" name="name" data-i18n-placeholder="contact.form.name" placeholder="Your Name" required>
-        <input type="email" name="email" data-i18n-placeholder="contact.form.email" placeholder="Your Email" required>
-        <input type="text" name="subject" data-i18n-placeholder="contact.form.subject" placeholder="Subject" required>
-        <textarea name="message" data-i18n-placeholder="contact.form.message" placeholder="Your Message" required></textarea>
-        <button type="submit" data-i18n="contact.send">Send Message</button>
-      </form>
     </div>
   </section>
 
   <footer>
-    <span data-i18n="footer.text">© 2025 Kristiasara Natamora — All Rights Reserved.</span>
+    <p class="i18n" data-en="&copy; 2026 Kristiasara Natamora — All Rights Reserved." data-id="&copy; 2026 Kristiasara Natamora — Seluruh Hak Cipta Dilindungi.">&copy; 2026 Kristiasara Natamora — All Rights Reserved.</p>
   </footer>
+
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
 
   <script src="script.js"></script>
 </body>
