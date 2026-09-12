@@ -469,8 +469,15 @@ border-radius: 50px;
 text-transform: uppercase;
 letter-spacing: 0.5px;
 }
-.project-badge.done { background: rgba(38, 138, 90, 0.12); color: #1f8a5a; }
-.project-badge.upcoming { background: rgba(201, 161, 90, 0.18); color: #97710f; }
+.project-badge.done {
+  background: rgba(38, 138, 90, 0.12);
+  color: #1f8a5a;
+}
+.project-badge.upcoming {
+  background: rgba(201, 161, 90, 0.22);
+  color: #97710f;
+  border: 1px solid rgba(201, 161, 90, 0.35);
+}
 .project-date { font-size: 0.82rem; color: var(--muted); font-style: italic; }
 .project-card h4 { font-size: 1.25rem; color: var(--maroon-deep); margin-bottom: 10px; }
 .project-card > p { font-size: 0.95rem; color: var(--muted); margin-bottom: 16px; flex: 1; }
